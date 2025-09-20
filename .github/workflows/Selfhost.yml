@@ -1,8 +1,11 @@
-name: self host
+name: Debug with tmate
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:   # allows you to trigger it manually
 
 jobs:
-  build:
-    runs-on: self-hosted
-    timeout-minutes: 360
+  debug:
+    runs-on: self-hosted   # make sure your runner is online
+    steps:
+      - name: Start tmate session
+        uses: mxschmitt/action-tmate@v3
