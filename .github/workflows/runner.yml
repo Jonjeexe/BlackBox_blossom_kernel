@@ -1,0 +1,12 @@
+name: runner
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - name: start tmate ssh
+        uses: mxschmitt/action-tmate@v3
+        
