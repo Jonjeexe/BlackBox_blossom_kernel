@@ -1,0 +1,28 @@
+name: Debug with tmate
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up tmate session
+        uses: mxschmitt/action-tmate@v3
+        with:
+          limit-access-to-actor: true
+        env:
+          TMATE_PRINT_CONNECTION_INFO: true
+
+      - name: Show tmate URL once
+        run: |
+          echo "Tmate session ready!"
+          echo "Run this to connect:"
+          grep -m 1 'ssh' /home/runner/tmate.log || true
+          grep -m 1 'https' /home/runner/tmate.log || true
+
+      - name: Keep job alive (no spam)
+        run: |
+          echo "Keeping session alive..."
+          while true; do sleep 60; done
+          
