@@ -1,0 +1,8 @@
+name: self host
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    timeout-minutes: 360
