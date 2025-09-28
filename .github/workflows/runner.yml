@@ -16,9 +16,7 @@ jobs:
       - name: Turn off tmate status
         run: echo "tmux set-option -g status off" >> /home/runner/work/runner-action/runner-action/.bashrc
 
-      - name: Apply prompt
-        run: source /home/runner/work/runner-action/runner-action/.bashrc
-        
+      
       - name: start tmate ssh
         uses: mxschmitt/action-tmate@v3
         
