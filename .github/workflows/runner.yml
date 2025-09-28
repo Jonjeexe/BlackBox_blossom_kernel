@@ -11,14 +11,13 @@ jobs:
         run: cd
 
       - name: Setup prompt
-        run: echo "PS1='\[\e[1;34m\] Jonjeexe\[\e[0m\]\[\e[38;5;208m\]@\[\e[0m\]\[\e[1;31m\]lab\[\e[0m\]\[\e[38;5;208m\]:\[\e[1;32m\]\w\[\e[38;5;208m\]$\[\e[0m\] '" >> ~/.bashrc
+        run: echo "PS1='\[\e[1;34m\] Jonjeexe\[\e[0m\]\[\e[38;5;208m\]@\[\e[0m\]\[\e[1;31m\]lab\[\e[0m\]\[\e[38;5;208m\]:\[\e[1;32m\]\w\[\e[38;5;208m\]$\[\e[0m\] '" >> /home/runner/work/runner-action/runner-action/.bashrc
 
       - name: Turn off tmate status
-        run: echo "tmux set-option -g status off" >> ~/.statusoff
+        run: echo "tmux set-option -g status off" >> /home/runner/work/runner-action/runner-action/.bashrc
 
       - name: Apply prompt
-        run: source /home/runner/.bashrc
-
+        run: source /home/runner/work/runner-action/runner-action/.bashrc
         
       - name: start tmate ssh
         uses: mxschmitt/action-tmate@v3
