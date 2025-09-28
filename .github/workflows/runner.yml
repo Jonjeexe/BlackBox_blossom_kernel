@@ -17,7 +17,8 @@ jobs:
         run: echo "tmux set-option -g status off" >> ~/.statusoff
 
       - name: Apply prompt
-        run: source ~/.bashrc
+        run: source /home/runner/.bashrc
+
         
       - name: start tmate ssh
         uses: mxschmitt/action-tmate@v3
