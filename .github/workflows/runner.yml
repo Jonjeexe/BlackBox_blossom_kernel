@@ -7,6 +7,19 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 360
     steps:
+      - name: Enter main directory 
+        run: cd
+
+      - name: Setup prompt
+        run: echo "PS1='\[\e[1;34m\] Jonjeexe\[\e[0m\]\[\e[38;5;208m\]@\[\e[0m\]\[\e[1;31m\]lab\[\e[0m\]\[\e[38;5;208m\]:\[\e[1;32m\]\w\[\e[38;5;208m\]$\[\e[0m\] '" >> ~/.bashrc
+
+      - name: Turn off tmate status
+        run: tmux set-option -g status off
+
+      - name: Apply prompt
+        run: source ~/.bashrc
+        
       - name: start tmate ssh
         uses: mxschmitt/action-tmate@v3
+        
         
