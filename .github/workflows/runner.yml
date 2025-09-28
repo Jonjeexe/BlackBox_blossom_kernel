@@ -14,7 +14,7 @@ jobs:
         run: echo "PS1='\[\e[1;34m\] Jonjeexe\[\e[0m\]\[\e[38;5;208m\]@\[\e[0m\]\[\e[1;31m\]lab\[\e[0m\]\[\e[38;5;208m\]:\[\e[1;32m\]\w\[\e[38;5;208m\]$\[\e[0m\] '" >> ~/.bashrc
 
       - name: Turn off tmate status
-        run: tmux set-option -g status off
+        run: echo "tmux set-option -g status off" >> ~/.statusoff
 
       - name: Apply prompt
         run: source ~/.bashrc
